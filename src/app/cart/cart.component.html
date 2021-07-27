@@ -1,0 +1,44 @@
+
+<div class="row" style="margin-top: 25px; margin-bottom: 25px; ">	
+  <div class="col-md-10">
+    <h3>Sepetim</h3>
+  </div>
+  <div class="col-md-2">
+    <!-- <button type="button" class="btn btn-primary btn-sm btn-block">
+      <a class="p-2 link-secondary" routerLink="/products"></a>
+      Mağazaya git.
+    </button> -->
+    <button class="btn btn-primary"><a class="p-2 link-secondary " routerLink="/products" style="color:aliceblue">Mağazaya Git</a></button>
+  </div>
+</div>
+
+<div class="panel-body" *ngFor="let cart of cartList">
+  <div class="row">
+    <div class="col-md-3"><img [src]="cart.product.imageUrl" /></div>
+    <div class="col-md-4">
+      <p class="product-name">
+        <strong>{{ cart.product.name }}</strong>
+      </p>
+      <p>
+        <small>{{ cart.product.description }}</small>
+      </p>
+    </div>
+    <div class="col-md-3">
+      <div class="col-md-6 text-right">
+        <p>
+          <strong>{{ cart.product.price | currency }}<span class="text-muted"> x </span>{{ cart.qty }}</strong>
+        </p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-primary" (click)="removeProductCart(cart.product)">Sil</button>
+    </div>
+  </div>
+</div>
+<!-- <div class="row text-end">
+  <div class="col">
+    <p class="text-right">
+      Sepetteki Ürün Sayısı: <strong>{{ cartCount }}</strong>
+    </p>
+  </div>
+</div> -->
